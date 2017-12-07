@@ -5,12 +5,23 @@ import { fetchUser } from '../actions/index';
 
 
 export default class UserList extends Component {
-  renderList() {
+  constructor(props){
+    super(props);
+    fetchUser();
 
+    this.state = { term: '' };
   }
+  renderList(event) {
+    this.setState({ term: event.target.value });
+  }
+
   render () {
     return (
-      <div></div>
+      <div
+        onload={this.renderList}
+        className="UserList"
+        value={this.state.term}
+      />
     )
   };
 };

@@ -6,7 +6,7 @@ const ROOT_URL = `https://randomuser.me/api/?results=${RESTULT_AMMOUNT}`;
 export const FETCH_USER = 'FETCH_USER';
 
 export function fetchUser() {
-  const url = `{ROOT_URL}`;
+  const url = `${ROOT_URL}`;
   const request = axios.get(url);
 
 
