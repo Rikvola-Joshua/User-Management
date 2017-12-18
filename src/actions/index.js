@@ -1,9 +1,8 @@
 import axios from 'axios';
 
-const RESTULT_AMMOUNT = 10;
-const ROOT_URL = `https://randomuser.me/api/?results=${RESTULT_AMMOUNT}`;
+const ROOT_URL = `http://jsonplaceholder.typicode.com/users/`;
 
-export const FETCH_USER = 'FETCH_USER';
+export const FETCH_USERS = 'FETCH_USERS';
 
 export function fetchUser() {
   const url = `${ROOT_URL}`;
@@ -11,7 +10,7 @@ export function fetchUser() {
 
 
   return {
-    type: FETCH_USER,
+    type: FETCH_USERS,
     payload: request
   };
 }

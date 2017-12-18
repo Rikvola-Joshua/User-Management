@@ -4,30 +4,33 @@ import { bindActionCreators } from 'redux';
 import { fetchUser } from '../actions/index';
 
 
-export default class UserList extends Component {
+class UserList extends Component {
   constructor(props){
     super(props);
-    fetchUser();
-
     this.state = { term: '' };
+    // this.setState({ term: '' });
+    // this.onload = this.onload.bind(this);
+
+    this.renderList();
   }
-  renderList(event) {
-    this.setState({ term: event.target.value });
+  renderList() {
+    this.props.fetchUser(this.state.term);
+    this.state = { term: '' };
   }
 
   render () {
     return (
       <div
-        onload={this.renderList}
+        onload={() => this.renderList()}
         className="UserList"
-        value={this.state.term}
       />
     )
   };
 };
 
-
 // if redux
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({ fetchUser }, dispatch);
 }
+
+export default connect(null, mapDispatchToProps)(UserList);
