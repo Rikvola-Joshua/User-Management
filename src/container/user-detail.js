@@ -2,22 +2,21 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 
 class UserDetail extends Component {
-  renderUser(userData){
-    const users = userData.results.map(user => user.name);
-    users.forEach(function (value) {
-      return (
-        <tr key={value.first}>
-          <td>
-            {value.first}
-            {/* {console.log(value.first)} */}
-          </td>
-        </tr>
-      )
-    });
-  }
+  // renderUser(userData){
+  //   return (
+  //     <tr key={userData.id}>
+  //       <td>
+  //         {userData.name}
+  //         {/* {console.log(userData)} */}
+  //       </td>
+  //     </tr>
+  //   );
+  // }
   render() {
     console.log(this.props.user);
+
     return (
+
       <table className="table table-hover">
         <thead>
           <tr>
@@ -28,8 +27,21 @@ class UserDetail extends Component {
           </tr>
         </thead>
         <tbody>
-          {this.props.user.map(this.renderUser)}
-        </tbody>
+          {this.props.user.forEach(function (userData){
+            debugger;
+          })
+        }
+            {/* props.user.map(user => user.name).forEach(function (userData){
+            debugger;
+            console.log("userData", userData)
+            // debugger;
+            // if (object.hasOwnProperty(userData)) {
+            //   console.log(userData.name);
+            //   this.renderUser(userData.name);
+            // }
+          })
+          } */}
+                </tbody>
       </table>
     );
   }
