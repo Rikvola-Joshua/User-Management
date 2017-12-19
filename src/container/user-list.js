@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import { bindActionCreators } from 'redux';
 import { fetchUser } from '../actions/index';
 
+import UserDetail from '../container/user-detail';
+
 
 class UserList extends Component {
   constructor(props){
@@ -20,10 +22,7 @@ class UserList extends Component {
 
   render () {
     return (
-      <div
-        onload={() => this.renderList()}
-        className="UserList"
-      />
+      <UserDetail />
     )
   };
 };
