@@ -7,8 +7,19 @@ class UserDetail extends Component {
       <tr key={userData.id}>
         <td>
           {userData.name}
-          {/* {console.log(userData)} */}
         </td>
+        <td>
+          <a target="_blank" href={'http://'+userData.website}>{userData.website}</a>
+        </td>
+        <td>
+          {userData.address.city}
+        </td>
+        <td>
+          <a>
+            <img alt="edit" src="./media/edit-icon.svg" className="edit-img"></img>
+          </a>
+        </td>
+
       </tr>
     );
   }
@@ -20,7 +31,7 @@ class UserDetail extends Component {
         <thead>
           <tr>
             <th>Name</th>
-            <th>Picture</th>
+            <th>Website</th>
             <th>City</th>
             <th>Edit</th>
           </tr>
