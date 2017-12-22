@@ -5,7 +5,6 @@ import { fetchUser } from '../actions/index';
 
 import UserDetail from '../container/user-detail';
 
-
 class UserList extends Component {
   constructor(props){
     super(props);
@@ -21,7 +20,9 @@ class UserList extends Component {
 };
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchUser }, dispatch);
+  return {
+    fetchUser: () => {dispatch(fetchUser())}  // return bindActionCreators({ fetchUser }, dispatch);
+  }
 }
 
 export default connect(null, mapDispatchToProps)(UserList);
