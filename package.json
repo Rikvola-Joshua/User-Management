@@ -1,5 +1,6 @@
 {
   "name": "user-management",
+  "jest": {},
   "version": "1.0.0",
   "description": "This Project is for the education only.",
   "main": "webpack.config.js",
@@ -15,9 +16,6 @@
     "test": "jest",
     "test:watch": "npm run test -- --watch",
     "start:dev": "webpack-dev-server"
-  },
-  "jest": {
-    "preset": "react-native"
   },
   "author": "Joshua Hirsig",
   "license": "ISC",
@@ -42,6 +40,7 @@
     "axios": "^0.17.1",
     "babel-preset-stage-1": "^6.1.18",
     "lodash": "^3.10.1",
+    "peer": "^0.2.8",
     "python": "0.0.4",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
