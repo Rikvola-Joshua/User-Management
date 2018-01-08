@@ -17,7 +17,7 @@
     "start:dev": "webpack-dev-server"
   },
   "jest": {
-    "preset": "react-native"
+    "verbose": true
   },
   "author": "Joshua Hirsig",
   "license": "ISC",
