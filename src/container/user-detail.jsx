@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
+import { validateUrl } from "../lib/library"
 
 class UserDetail extends Component {
   renderUser(userData){
@@ -9,7 +10,7 @@ class UserDetail extends Component {
           {userData.name}
         </td>
         <td>
-          <a target="_blank" href={'http://'+userData.website}>{userData.website}</a>
+          <a target="_blank" href={ validateUrl(userData.website) }>{ userData.website }</a>
         </td>
         <td>
           {userData.address.city}

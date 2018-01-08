@@ -1,8 +1,8 @@
-import UserDetail from '../src/container/user-detail'
+import { validateUrl } from '../src/lib/library'
 
-describe('UrlValidation', () => {
+describe('Url validation', () => {
   it('should be a valid string', () => {
-    const result = UserDetail.validateUrl("www.google.com")
-    exept (result).toBe("http://www.google.com")
+    const result = validateUrl('www.google.com');
+    expect(result).toBe('http://www.google.com');
   })
 })
