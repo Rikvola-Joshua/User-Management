@@ -1,7 +1,7 @@
 import React from 'react';
 import { Component } from 'react';
 
-import UserList from '../container/user-list';
+import UserList from '../container/list_view/user-list';
 
 
 export default class App extends Component {

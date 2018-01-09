@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { validateUrl } from "../lib/library"
+import { validateUrl } from "../../lib/library"
 
 class UserDetail extends Component {
   renderUser(userData){
     return (
       <tr key={userData.id}>
+        <td>
+          {userData.id}
+        </td>
         <td>
           {userData.name}
         </td>
@@ -26,11 +29,11 @@ class UserDetail extends Component {
   }
   render() {
     const {users} = this.props
-    console.log(users.map(user => this.renderUser(user)));
     return (
       <table className="table table-hover">
         <thead>
           <tr>
+            <th>Id</th>
             <th>Name</th>
             <th>Website</th>
             <th>City</th>
