@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { bindActionCreators } from 'redux';
-import { fetchUser } from '../../actions/index';
+import { fetchUsers } from '../../actions/index';
 
 import UserDetail from './user-detail';
 
@@ -9,7 +9,7 @@ class UserList extends Component {
   constructor(props){
     super(props);
     this.state = { term: '' };
-    this.props.fetchUser(this.state.term);
+    this.props.fetchUsers(this.state.term);
   }
 
   render () {
@@ -21,7 +21,7 @@ class UserList extends Component {
 
 function mapDispatchToProps(dispatch) {
   return {
-    fetchUser: () => {dispatch(fetchUser())}  // return bindActionCreators({ fetchUser }, dispatch);
+    fetchUsers: () => {dispatch(fetchUsers())}  // return bindActionCreators({ fetchUser }, dispatch);
   }
 }
 

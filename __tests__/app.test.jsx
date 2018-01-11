@@ -10,3 +10,6 @@ describe('URL Validation', () => {
     expect(result).toBe('');
   })
 })
+describe('Input Validation', () => {
+  
+});
