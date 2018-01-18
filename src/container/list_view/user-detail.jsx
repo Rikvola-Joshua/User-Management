@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import { validateUrl } from "../../lib/library"
 import { fetchUsers } from '../../actions';
 
@@ -11,6 +12,7 @@ class UserDetail extends Component {
 
   renderUser(){
     return _.map(this.props.users, user=> {
+      const userid = `user/${user.id}`
       return (
         <tr key={user.id}>
           <td>
@@ -26,9 +28,9 @@ class UserDetail extends Component {
             {user.address.city}
           </td>
           <td>
-            <a>
+            <Link to={userid}>
               <img alt="edit" src="./media/edit-icon.svg" className="edit-img"></img>
-            </a>
+            </Link>
           </td>
         </tr>
       )
