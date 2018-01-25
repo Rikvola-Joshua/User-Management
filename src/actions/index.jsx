@@ -4,6 +4,7 @@ const ROOT_URL = `http://jsonplaceholder.typicode.com/users/`;
 
 export const FETCH_USERS = 'FETCH_USERS';
 export const FETCH_USER = 'FETCH_USER';
+export const SAVED_USER = 'SAVED_USER';
 
 export function fetchUsers() {
   const url = `${ROOT_URL}`;
@@ -19,6 +20,20 @@ export function fetchUser(id) {
 
   return {
     type: FETCH_USER,
+    payload: request
+  }
+}
+
+export function saveUser(user){
+  const request = axios({
+    method: 'post',
+    url: 'http://localhost/UserManager/api/values',
+    data: {
+      user
+    }
+  })
+  return {
+    type: SAVED_USER,
     payload: request
   }
 }
