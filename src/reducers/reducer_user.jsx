@@ -8,7 +8,7 @@ export default function(state = [], action) {
     case FETCH_USERS:
       return _.mapKeys(action.payload.data, 'id')
     case SAVED_USER:
-
+      return {...state,[action.payload.data.id]: action.payload.data}
       break;
     default:
       return state;

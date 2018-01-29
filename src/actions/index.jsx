@@ -25,13 +25,15 @@ export function fetchUser(id) {
 }
 
 export function saveUser(user){
-  const request = axios({
-    method: 'post',
-    url: 'http://localhost/UserManager/api/values',
-    data: {
-      user
-    }
-  })
+  // const request = axios({
+  //   method: 'post',
+  //   url: 'http://localhost/UserManager/api/values',
+  //   data: {
+  //     user
+  //   }
+  // })
+  const request = axios.post(`http://localhost/UserManager/api/values`, values)
+    .then(() => callback())
   return {
     type: SAVED_USER,
     payload: request

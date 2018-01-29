@@ -26,7 +26,7 @@ namespace UserManager.Controllers
         // post api/values
         public void Post(User user)
         {
-                
+
         }
 
         //// PUT api/values/5

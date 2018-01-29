@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom'
 import { validateUrl } from "../../lib/library"
-import { fetchUser } from '../../actions';
+import { fetchUser, saveUser } from '../../actions';
 
 class EditDetail extends Component {
   componentDidMount() {
@@ -11,14 +11,16 @@ class EditDetail extends Component {
      const { id } = this.props.match.params
      this.props.fetchUser(id);
   }
+
   render() {
     const { user } = this.props
 
     if (!user) {
       return <div>Loading...</div>
     }
+
     return (
-      <form>
+      <form onSubmit={this.submitHandler}>
         <table>
           <thead>
             <tr>
@@ -119,6 +121,7 @@ class EditDetail extends Component {
           </tbody>
         </table>
         <div>
+          <Link type="submit" className="btn btn-success">Save</Link>
           <Link to="/" className="btn btn-danger">Cancel</Link>
         </div>
       </form>
