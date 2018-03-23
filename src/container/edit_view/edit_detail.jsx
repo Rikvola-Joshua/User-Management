@@ -20,7 +20,7 @@ class EditDetail extends Component {
     }
 
     return (
-      <form onSubmit={this.submitHandler}>
+      <form>
         <table>
           <thead>
             <tr>
@@ -33,14 +33,14 @@ class EditDetail extends Component {
                 <span>Name:</span>
               </td>
               <td>
-                <input type="text" name="name" value={user.name}></input>
+                <input type="text" name="name" defaultValue={user.name}></input>
               </td>
               <td>
                 <span>Street, suite:</span>
               </td>
               <td>
-                <input type="text" name="street" value={user.address.street}></input>
-                <input type="text" name="suite" value={user.address.suite}></input>
+                <input type="text" name="street" defaultValue={user.address.street}></input>
+                <input type="text" name="suite" defaultValue={user.address.suite}></input>
               </td>
             </tr>
             <tr>
@@ -48,13 +48,13 @@ class EditDetail extends Component {
                   <span>Username:</span>
               </td>
               <td>
-                  <input type="text" name="username" value={user.username}></input>
+                  <input type="text" name="username" defaultValue={user.username}></input>
               </td>
               <td>
                   <span>City:</span>
               </td>
               <td>
-                  <input type="text" name="city" value={user.address.city}></input>
+                  <input type="text" name="city" defaultValue={user.address.city}></input>
               </td>
             </tr>
             <tr>
@@ -62,13 +62,13 @@ class EditDetail extends Component {
                   <span>Email:</span>
               </td>
               <td>
-                  <input type="text" name="email" value={user.email}></input>
+                  <input type="text" name="email" defaultValue={user.email}></input>
               </td>
               <td>
                   <span>ZipCode:</span>
               </td>
               <td>
-                  <input type="text" name="ZipCode" value={user.address.zipcode}></input>
+                  <input type="text" name="ZipCode" defaultValue={user.address.zipcode}></input>
               </td>
             </tr>
             <tr>
@@ -76,7 +76,7 @@ class EditDetail extends Component {
                   <span>Phone:</span>
               </td>
               <td>
-                  <input type="text" name="phone" value={user.phone}></input>
+                  <input type="text" name="phone" defaultValue={user.phone}></input>
               </td>
             </tr>
             <tr>
@@ -84,7 +84,7 @@ class EditDetail extends Component {
                   <span>Website:</span>
               </td>
               <td>
-                  <input type="text" name="website" value={user.website}></input>
+                  <input type="text" name="website" defaultValue={user.website}></input>
               </td>
             </tr>
           </tbody>
@@ -99,7 +99,7 @@ class EditDetail extends Component {
                 <span>Name:</span>
               </td>
               <td>
-                <input type="text" name="companyName" value={user.company.name}></input>
+                <input type="text" name="companyName" defaultValue={user.company.name}></input>
               </td>
             </tr>
             <tr>
@@ -107,7 +107,7 @@ class EditDetail extends Component {
                 <span>Catch phrase:</span>
               </td>
               <td>
-                <input type="text" name="catchPhrase" value={user.company.catchPhrase}></input>
+                <input type="text" name="catchPhrase" defaultValue={user.company.catchPhrase}></input>
               </td>
             </tr>
             <tr>
@@ -115,13 +115,12 @@ class EditDetail extends Component {
                 <span>Business:</span>
               </td>
               <td>
-                <input type="text" name="business" value={user.company.bs}></input>
+                <input type="text" name="business" defaultValue={user.company.bs}></input>
               </td>
             </tr>
           </tbody>
         </table>
         <div>
-          <Link type="submit" className="btn btn-success">Save</Link>
           <Link to="/" className="btn btn-danger">Cancel</Link>
         </div>
       </form>
